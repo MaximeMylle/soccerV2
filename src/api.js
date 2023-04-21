@@ -1,4 +1,4 @@
-const express = require('express')
+/*const express = require('express')
 const app = express()
 const port = 3000
 
@@ -9,10 +9,11 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+*/
 
 
 
-/*
+
 const express = require("express");
 const serverless = require("serverless-http");
 
@@ -31,4 +32,4 @@ app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
-*/
+
