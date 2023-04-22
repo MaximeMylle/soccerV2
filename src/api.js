@@ -1,10 +1,46 @@
 const express = require("express");
 const serverless = require("serverless-http");
-const fs = require('fs');
 
 const app = express();
 const router = express.Router();
 
+
+const users = [
+  {
+  name:"Maxime",
+  lastname:"Mylle"
+  }
+  ]
+
+const teams = [
+  {
+    id: "1",
+    Name: "Sport na Arbeid",
+    Location: "Veldegem"
+  },
+  {
+    id: "2",
+    Name: "KroonHove",
+    Location: "Unknown"
+  }
+]
+
+const games = [
+  {
+    id: "1",
+    Home_Team_Id: "1",
+    Out_Team_Id: "2",
+    Date: "01/01/2023",
+    score: "-"
+  },
+  {
+    id: "2",
+    Home_Team_Id: "1",
+    Out_Team_Id: "2",
+    Date: "01/01/2023",
+    score: "-"
+  }
+]
 
 
 router.get("/", (req, res) => {
@@ -15,11 +51,15 @@ router.get("/", (req, res) => {
 
 
 router.get('/users', (req, res) => {
-  fs.readFile('./data.json', 'utf8', (err, data) => {
-    if (err) throw err;
-    const users = JSON.parse(data).users;
-    res.send(users);
-  });
+  res.json(users);
+});
+
+router.get('/teams', (req, res) => {
+  res.json(teams);
+});
+
+router.get('/games', (req, res) => {
+  res.json(games);
 });
 
 router.post('/users', (req, res) => {
