@@ -8,6 +8,12 @@ var generateHomeInfo = function(){
     function(data) {
     // JSON result in `data` variable
     console.log(data)
+
+    data.forEach((element) => {
+        console.log( element.lastname );
+      });
+
+    data.user
     });
 }
 
