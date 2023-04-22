@@ -3,19 +3,38 @@ $(location). attr('href')
 
 
 var generateHomeInfo = function(){
-    var getusersurl = $(location). attr('href') + "/.netlify/functions/api/users";
-    console.log(getusersurl);
-    $.getJSON(getusersurl, 
-    function(data) {
-    // JSON result in `data` variable
-    console.log(data)
+    var urlBase = $(location). attr('href') + ".netlify/functions/api/";
+//    var getusersurl = $(location). attr('href') + ".netlify/functions/api/users";
 
-    data.forEach((element) => {
-        console.log( element.lastname );
+    var users;
+    var teams;
+    var games;
+
+    $.getJSON(urlBase + "users", function(data) {
+        users = data;
+    });
+
+    $.getJSON(urlBase + "teams", function(data) {
+        teams = data;
+    });
+
+    $.getJSON(urlBase + "games", function(data) {
+        games = data;
+    });
+
+    rowToAdd = "";
+    games.forEach((game) => {
+        rowToAdd += "<tr>"
+        rowToAdd +="<td>" + game.Date + "</td>"
+        rowToAdd +="<td>" + teams.find(x => x.id === game.Home_Team_Id).Name + "</td>"
+        rowToAdd +="<td>" + teams.find(x => x.id === game.Out_Team_Id).Name + "</td>"
+        rowToAdd +="<td>" + teams.find(x => x.id === game.Home_Team_Id).Location + "</td>"
+        rowToAdd += "</tr>"
       });
 
-    data.user
-    });
+
+      $("#gamesTable").append(rowToAdd);
+    
 }
 
 
