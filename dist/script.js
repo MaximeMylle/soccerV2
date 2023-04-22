@@ -2,7 +2,7 @@ $(location). attr('href')
 
 
 
-var generateHomeInfo = function(){
+var generateHomeInfo = async function(){
     var urlBase = $(location). attr('href') + ".netlify/functions/api/";
 //    var getusersurl = $(location). attr('href') + ".netlify/functions/api/users";
 
@@ -10,15 +10,15 @@ var generateHomeInfo = function(){
     var teams;
     var games;
 
-    $.getJSON(urlBase + "users", function(data) {
+    await $.getJSON(urlBase + "users", function(data) {
         users = data;
     });
 
-    $.getJSON(urlBase + "teams", function(data) {
+    await $.getJSON(urlBase + "teams", function(data) {
         teams = data;
     });
 
-    $.getJSON(urlBase + "games", function(data) {
+    await $.getJSON(urlBase + "games", function(data) {
         games = data;
     });
 
