@@ -1,0 +1,29 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@example.com"
+      },
+      {
+        "id": 2,
+        "name": "Jane Doe",
+        "email": "jane@example.com"
+      }
+    ],
+        "games": [
+            {
+                "id": 1,
+                "HomeTeam": "Sport na arbeid",
+                "OutTeam": "john@example.com",
+                "Score" : "-"
+            },
+            {
+                "id": 1,
+                "name": "John Doe",
+                "email": "john@example.com",
+                "Score" : "-"
+            }
+    ]
+}
+  
