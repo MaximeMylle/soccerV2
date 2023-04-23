@@ -74,7 +74,7 @@ const teams = [
     Location: "Unknown"
   },
   {  
-    id: "12",
+    id: "10",
     Name: "BammBamm",
     Location: "Unknown"
   }
