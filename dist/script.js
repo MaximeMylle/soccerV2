@@ -32,6 +32,8 @@ var generateHomeInfo = async function(){
         rowToAdd +="<td>" + teams.find(x => x.id === game.Home_Team_Id).Location + "</td>"
         rowToAdd +="<td>" +"<a href='gameDetails.html?gameId="+game.id+"'>Game Details</a>"+ "</td>"
         rowToAdd += "</tr>"
+
+        console.log(game);
       });
 
 
