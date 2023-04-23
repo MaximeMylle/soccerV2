@@ -44,7 +44,7 @@ var generateHomeInfo = async function(){
 
 
 var showGameDetails = async function(){
-
+    var urlBase = $(location). attr('href') + ".netlify/functions/api/";
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
