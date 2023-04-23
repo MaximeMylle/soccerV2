@@ -44,6 +44,10 @@ var generateHomeInfo = async function(){
 
 
 var showGameDetails = async function(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
     const gameId = urlParams.get('gameId');
 
     await $.getJSON(urlBase + "games", function(data) {
