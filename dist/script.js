@@ -65,10 +65,7 @@ var showGameDetails = async function(){
 
 
 
-$( document ).ready(function() {
-    console.log( "ready!" );
-    generateHomeInfo();
-});
+
 
 
 
