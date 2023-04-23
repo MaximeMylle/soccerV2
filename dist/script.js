@@ -34,6 +34,7 @@ var generateHomeInfo = async function(){
         rowToAdd += "</tr>"
 
         console.log(game);
+        console.log(game.id);
       });
 
 
